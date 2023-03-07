@@ -2,7 +2,7 @@
 Pour ce projet je souhaite visualiser les données des taxis new yorkais pendant l'année 2013. L'année est au hasard car elle dépend des données que j'ai trouvées. 
 
 
-Contexte
+**Contexte**
 
 Les données que je souhaite utiliser viennent du site archive.org. J'ai trouvé ce lien grâce au lien du GitHub reçu lors du cours. C'est en parcourant les différents thèmes que je suis tombée sur celui en lien avec les taxi new yorkais. Cependant je ne mets pas de côté que j'utiliserais peut-être d'autres données provenant de kaggle.com pour les compléter. 
 
@@ -11,10 +11,14 @@ Avant d'être sur archive.org les données des taxis avaient été rassemblées 
 
 Il y a aussi des données sur les taxis new yorkais sur Kaggle.com. Ces données pourraient bien compléter celles trouvées sur archives.org. 
 
-Description: Comment sont structurées les données ? Parler du format, des attributs et du type de données
+**Description**
+Comment sont structurées les données ? Parler du format, des attributs et du type de données
 
-Les données sont en CSV, et sur Kaggle.com et sur archives.org. Celles sur kaggle 
+Les données sont en CSV, et sur Kaggle.com et sur archives.org. 
+Celles d'archives.org sont séparées en deux sets de données
 
-But: qu'est-ce que vous voulez découvrir ? Des tendances ? Vous voulez explorer ou expliquer?
+**But**
+qu'est-ce que vous voulez découvrir ? Des tendances ? Vous voulez explorer ou expliquer?
 
-Références: Qui d'autre dans le web ou dans la recherche a utilisé ces données ? Dans quel but ?
+**Références**
+Qui d'autre dans le web ou dans la recherche a utilisé ces données ? Dans quel but ?
