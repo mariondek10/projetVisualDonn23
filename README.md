@@ -12,13 +12,15 @@ Avant d'être sur archive.org les données des taxis avaient été rassemblées 
 Il y a aussi des données sur les taxis new yorkais sur Kaggle.com. Ces données pourraient bien compléter celles trouvées sur archives.org. 
 
 **Description**
-Comment sont structurées les données ? Parler du format, des attributs et du type de données
 
 Les données sont en CSV, et sur Kaggle.com et sur archives.org. 
-Celles d'archives.org sont séparées en deux sets de données
+Celles d'archives.org sont séparées en deux sets de données: le premier "trip fare" regroupe des informations quant aux prix des trajets et les informations sur les taxis, les numéro des licences de médaillon, etc. ainsi que l'heure de prise en charge. Pour le deuxième "trip data" ce sont des informations sur les trajets. C'est-à-dire la distance, le lieu de prise en charge, de dépose, le temps de trajet etc. 
+Pour les données de data, je n'ai pas encore choisi celles qui compléteraient bien mes deux premiers sets de données mais un qui m'intéresserait peut-être est le taux d'occupation des taxis en fonction des périodes de l'année. 
 
 **But**
-qu'est-ce que vous voulez découvrir ? Des tendances ? Vous voulez explorer ou expliquer?
+
+Le but de ma visualisation de données est plus d'exploration. En effet, j'aimerais représenter ces informations sous forme de carte sur laquelle l'utilisateur.rice peut se déplacer et découvrir diverses informations amenées graphiquement et avec un joli design qui rappellerait les taxis new yorkais.
 
 **Références**
-Qui d'autre dans le web ou dans la recherche a utilisé ces données ? Dans quel but ?
+
+Ces données sont en général plutôt utilisées pour des recherches statistiques, par exemple pour comparer l'utilisation du métro versus les taxis. Ou comprendre l'impact de l'arrivée de Uber sur ce marché. 
