@@ -1,3 +1,8 @@
+
+# Wireframe
+
+[wireframe.pdf](https://github.com/mariondek10/projetVisualDonn23/files/10989190/wireframe.pdf)
+
 # projetVisualDonn23
 Pour ce projet je souhaite visualiser les données des taxis new yorkais pendant l'année 2013. L'année est au hasard car elle dépend des données que j'ai trouvées. 
 
@@ -25,8 +30,5 @@ Le but de ma visualisation de données est plus d'exploration. En effet, j'aimer
 
 Ces données sont en général plutôt utilisées pour des recherches statistiques, par exemple pour comparer l'utilisation du métro versus les taxis. Ou comprendre l'impact de l'arrivée de Uber sur ce marché. 
 
-**Wireframe** 
-
-[wireframe.pdf](https://github.com/mariondek10/projetVisualDonn23/files/10989190/wireframe.pdf)
 
 
