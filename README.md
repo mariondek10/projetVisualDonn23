@@ -24,3 +24,8 @@ Le but de ma visualisation de données est plus d'exploration. En effet, j'aimer
 **Références**
 
 Ces données sont en général plutôt utilisées pour des recherches statistiques, par exemple pour comparer l'utilisation du métro versus les taxis. Ou comprendre l'impact de l'arrivée de Uber sur ce marché. 
+
+**Wireframe** 
+[wireframe.pdf](https://github.com/mariondek10/projetVisualDonn23/files/10989190/wireframe.pdf)
+
+
