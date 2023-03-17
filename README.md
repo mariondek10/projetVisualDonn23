@@ -3,7 +3,7 @@
 
 [wireframe.pdf](https://github.com/mariondek10/projetVisualDonn23/files/10989190/wireframe.pdf)
 
-# projetVisualDonn23
+# Thématique
 Pour ce projet je souhaite visualiser les données des taxis new yorkais pendant l'année 2013. L'année est au hasard car elle dépend des données que j'ai trouvées. 
 
 
