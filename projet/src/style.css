@@ -1,0 +1,16 @@
+#map{
+    height: 180px; 
+}
+
+.axis text,
+.slider text {
+  font-size: 18px;
+}
+
+.slider text {
+    fill: green;
+  }
+
+  .axis text {
+    fill: red;
+  }
