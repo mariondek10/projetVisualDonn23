@@ -10,6 +10,7 @@ import { mean } from "d3-array";
 import { sliderBottom } from "d3-simple-slider";
 import * as d3 from "d3";
 import h337 from "heatmap.js";
+import * as L from "leaflet";
 
 /* import data1erMai from "../data/trip_data_0105.csv";
 import data0105 from "../data/trip_data_20130501.csv";
@@ -44,6 +45,8 @@ import data2905 from "../data/trip_data_20130529.csv";
 import data3005 from "../data/trip_data_20130530.csv";
 import data3105 from "../data/trip_data_20130531.csv"; */
 
+/*Carte*/
+
 const map = L.map("map").setView([40.764477, -73.979113], 10);
 L.tileLayer(
   "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
@@ -53,6 +56,8 @@ L.tileLayer(
       '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
   }
 ).addTo(map);
+
+/*Données nettoyées*/
 
 const cleanData = data1405.map(function (d) {
   return {
@@ -65,7 +70,9 @@ const cleanData = data1405.map(function (d) {
   };
 });
 
-console.log(cleanData);
+//console.log(cleanData);
+
+/* Slider */
 
 const div = document.querySelector("#slider");
 const slider = sliderBottom().min(0).max(24).step(1).width(1000);
@@ -79,6 +86,8 @@ const g = d3
   .attr("transform", "translate(30,30)");
 
 g.call(slider);
+
+/*Données nettoyées par heure*/
 
 function getPickupLocationsByHour(data, hour) {
   // Filter data by pickup hour
@@ -97,7 +106,7 @@ function getPickupLocationsByHour(data, hour) {
   return pickupLocations;
 }
 
-console.log(getPickupLocationsByHour(data1405, 0));
+//console.log(getPickupLocationsByHour(data1405, 0));
 
 function getDropOffLocationsByHour(data, hour) {
   // Filter data by pickup hour
@@ -116,7 +125,70 @@ function getDropOffLocationsByHour(data, hour) {
   return dropOffLocation;
 }
 
-console.log(getDropOffLocationsByHour(data1405, 0));
+//console.log(getDropOffLocationsByHour(data1405, 0));
+
+//max : lat: 40.953047, long: -74.071165 -> au-dessus de Paramus
+//min: lat :40.588219, long: -73.657818 -> près de long beach
+
+const dataUtilisable = cleanData.filter(
+  (d) =>
+    d.pickup_latitude < 40.953047 &&
+    d.pickup_latitude > 40.588219 &&
+    d.pickup_longitude < -73.657818 &&
+    d.pickup_longitude > -74.071165
+);
+
+const minPickupLong = d3.min(dataUtilisable.map((d) => d.pickup_longitude));
+const maxPickupLong = d3.max(dataUtilisable.map((d) => d.pickup_longitude));
+const minPickupLat = d3.min(dataUtilisable.map((d) => d.pickup_latitude));
+const maxPickupLat = d3.max(dataUtilisable.map((d) => d.pickup_latitude));
+
+//console.log(minPickupLat, minPickupLong, maxPickupLat, maxPickupLong);
+
+const hautG = [40.953047, -74.071165];
+const basG = [40.588219, -74.071165];
+const hautD = [40.953047, -73.657818];
+const basD = [40.588219, -73.657818];
+
+const intervalleLong = hautG[1] - hautD[1];
+const intervalleLat = hautG[0] - basG[0];
+
+const nb_long = 10;
+const nb_lat = 10;
+
+const cadrillage = [];
+/* 
+for (let i = hautG[1]; i <= hautD[1]; i -= intervalleLong / nb_long) {
+  cadrillage.push([hautG[0], i]);
+} */
+
+/* for (let i = hautG[0]; i >= basG[0]; i -= intervalleLat / nb_lat) {
+  cadrillage.push([i, hautG[1]]);
+} */
+
+let i1 = hautG[1];
+do {
+  cadrillage.push([hautG[0], i1]);
+  i1 -= intervalleLong / nb_long;
+} while (i1 < hautD[1]);
+
+let i2 = hautG[0];
+do {
+  cadrillage.push([i2, hautG[1]]);
+  i2 -= intervalleLat / nb_lat;
+} while (i2 > basG[0]);
+
+console.log(cadrillage);
+
+cadrillage.forEach((d) => {
+  L.circle([d[0], d[1]], 100, {
+    color: "red",
+    fillColor: "#f03",
+    fillOpacity: 0.5,
+  }).addTo(map);
+});
+
+/* Heatmap */
 
 const config = {
   container: document.getElementById("map"),
@@ -134,7 +206,7 @@ const config = {
 };
 
 // create heatmap with configuration
-const heatmapInstance = h337.create(config);
+/* const heatmapInstance = h337.create(config);
 
 // a single datapoint
 var dataPoint = {
@@ -155,7 +227,7 @@ for (let i = 0; i < cleanData.length; i++) {
       cleanData[i].pickup_longitude,
     ]).addTo(map);
   }
-}
+} */
 
 /*
 const tabData = [data0105, data0205, data0305];
