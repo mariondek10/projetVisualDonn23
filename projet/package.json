@@ -20,6 +20,7 @@
     "d3-selection": "^3.0.0",
     "d3-simple-slider": "^1.10.4",
     "heatmap.js": "^2.0.5",
-    "leaflet": "^1.9.3"
+    "leaflet": "^1.9.3",
+    "leaflet.heat": "^0.2.0"
   }
 }
