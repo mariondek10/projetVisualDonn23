@@ -146,7 +146,7 @@ function renderHeatMapLayer(map, cleanData) {
   });
 
   const heatMap = L.heatLayer(heatMapArray, {
-    radius: 35,
+    radius: 40,
     blur: 13,
     minOpacity: 0.15,
     gradient: { 0.1: "#FF33B1", 0.5: "#16F2F2", 0.7: "#A0FF00" },
