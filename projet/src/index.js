@@ -111,6 +111,7 @@ const heatMap = L.heatLayer(heatMapArray, {
 });
 
 function renderHeatMapLayerByHour(map, cleanData, hour) {
+  map.removeLayer(heatMap);
   cleanData.forEach((d) => {
     if (d.pickup_hour === hour) {
       let heatMapPoint = {
@@ -127,7 +128,7 @@ function renderHeatMapLayerByHour(map, cleanData, hour) {
   console.log(heatMapArray);
 }
 
-//renderHeatMapLayerByHour(map, cleanData, 0);
+//renderHeatMapLayerByHour(map, cleanData, 4);
 
 /*2ème map*/
 
@@ -174,17 +175,6 @@ renderHeatMapLayerByHour2(map2, cleanData, 0);
 /*Animation slider*/
 
 /*Animation heatmap*/
-const margin = { top: 50, right: 40, bottom: 50, left: 40 },
-  width = window.innerWidth - margin.left - margin.right,
-  height = 0.6 * window.innerHeight - margin.top - margin.bottom;
-
-/* const svg = d3
-  .select("#viz_area")
-  .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-  // translate this svg element to leave some margin.
-  .append("g"); */
 
 // variable to store our intervalID
 let nIntervId;
@@ -202,9 +192,9 @@ function play() {
     i = 0;
   } else {
     i++;
-    //d3.select("#paragraphe").text(data[i].annee);
-    renderHeatMapLayerByHour(map, cleanData, i);
   }
+  console.log(i);
+  renderHeatMapLayerByHour(map, cleanData, i);
 }
 
 function stop() {
