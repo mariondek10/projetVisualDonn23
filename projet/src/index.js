@@ -58,46 +58,6 @@ const g = d3
 
 g.call(slider);
 
-/*Données nettoyées par heure*/
-
-function getPickupLocationsByHour(data, hour) {
-  // Filter data by pickup hour
-  const filteredData = data.filter(
-    (d) => new Date(d.pickup_datetime).getHours() === hour
-  );
-
-  // Map data to array of pickup locations
-  const pickupLocations = filteredData.map((d) => {
-    return {
-      latitude: +d.pickup_latitude,
-      longitude: +d.pickup_longitude,
-    };
-  });
-
-  return pickupLocations;
-}
-
-//console.log(getPickupLocationsByHour(data1405, 0));
-
-function getDropOffLocationsByHour(data, hour) {
-  // Filter data by pickup hour
-  const filteredData = data.filter(
-    (d) => new Date(d.dropoff_datetime).getHours() === hour
-  );
-
-  // Map data to array of pickup locations
-  const dropOffLocation = filteredData.map((d) => {
-    return {
-      latitude: +d.dropoff_latitude,
-      longitude: +d.dropoff_longitude,
-    };
-  });
-
-  return dropOffLocation;
-}
-
-//console.log(getDropOffLocationsByHour(data1405, 0));
-
 /* Heatmap par heure */
 
 const heatMapArray = [];
@@ -165,8 +125,6 @@ function renderHeatMapLayerByHour2(map2, cleanData, hour) {
   });
 
   heatMap2.addTo(map2);
-
-  console.log(heatMapArray2);
 }
 
 //renderHeatMapLayerByHour2(map2, cleanData, 0);
@@ -238,8 +196,8 @@ function play2() {
   } else {
     y++;
   }
-  console.log(y);
   renderHeatMapLayerByHour2(map2, cleanData, y);
+
   heuredrop.innerHTML = "Heure : " + y + "h";
 }
 
