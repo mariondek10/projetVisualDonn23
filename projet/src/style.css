@@ -10,6 +10,11 @@ html, body{
     font-family: 'Roboto', sans-serif;
 }
 
+
+h1, h2, h3{
+  color: rgb(248, 236, 7);
+}
+
 .axis text,
 .slider text {
   font-size: 18px;
@@ -21,4 +26,8 @@ html, body{
 
   .axis text {
     fill: red;
+  }
+ 
+  html{
+    cursor: url(../src/img/taxi.png), auto;
   }

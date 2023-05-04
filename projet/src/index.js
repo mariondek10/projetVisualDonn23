@@ -150,7 +150,7 @@ function play() {
   } else {
     i++;
   }
-  console.log(i);
+
   renderHeatMapLayerByHour(map, cleanData, i);
   heurepup.innerHTML = "Heure : " + i + "h";
 }
