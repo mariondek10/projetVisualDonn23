@@ -124,8 +124,6 @@ function renderHeatMapLayerByHour(map, cleanData, hour) {
   });
 
   heatMap.addTo(map);
-
-  console.log(heatMapArray);
 }
 
 //renderHeatMapLayerByHour(map, cleanData, 4);
@@ -154,6 +152,7 @@ const heatMap2 = L.heatLayer(heatMapArray2, {
 });
 
 function renderHeatMapLayerByHour2(map2, cleanData, hour) {
+  map2.removeLayer(heatMap2);
   cleanData.forEach((d) => {
     if (d.dropoff_hour === hour) {
       let heatMapPoint2 = {
@@ -170,7 +169,7 @@ function renderHeatMapLayerByHour2(map2, cleanData, hour) {
   console.log(heatMapArray2);
 }
 
-renderHeatMapLayerByHour2(map2, cleanData, 0);
+//renderHeatMapLayerByHour2(map2, cleanData, 0);
 
 /*Animation slider*/
 
@@ -195,6 +194,7 @@ function play() {
   }
   console.log(i);
   renderHeatMapLayerByHour(map, cleanData, i);
+  heurepup.innerHTML = "Heure : " + i + "h";
 }
 
 function stop() {
@@ -213,6 +213,54 @@ function pause() {
   nIntervId = null;
 }
 
+const heurepup = document.querySelector("#paragraphe");
+
 document.getElementById("play").addEventListener("click", animate);
 document.getElementById("stop").addEventListener("click", stop);
 document.getElementById("pause").addEventListener("click", pause);
+
+/*Animation heatmap2*/
+
+// variable to store our intervalID
+let nIntervId2;
+
+function animate2() {
+  // check if already an interval has been set up
+  if (!nIntervId2) {
+    nIntervId2 = setInterval(play2, 1000);
+  }
+}
+
+let y = 0;
+function play2() {
+  if (y > 24) {
+    y = 0;
+  } else {
+    y++;
+  }
+  console.log(y);
+  renderHeatMapLayerByHour2(map2, cleanData, y);
+  heuredrop.innerHTML = "Heure : " + y + "h";
+}
+
+function stop2() {
+  clearInterval(nIntervId2);
+
+  // release our intervalID from the variable
+  nIntervId2 = null;
+
+  y = 0;
+}
+
+function pause2() {
+  clearInterval(nIntervId2);
+
+  // release our intervalID from the variable
+  nIntervId2 = null;
+}
+
+const heuredrop = document.querySelector("#paragraphe2");
+
+document.getElementById("play2").addEventListener("click", animate2);
+document.getElementById("stop2").addEventListener("click", stop2);
+document.getElementById("pause2").addEventListener("click", pause2);
