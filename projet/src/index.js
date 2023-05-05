@@ -40,6 +40,7 @@ export const cleanData = data1405.map(function (d) {
     dropoff_latitude: +d.dropoff_latitude,
   };
 });
+let data = cleanData;
 
 console.log(cleanData);
 
@@ -78,6 +79,7 @@ function renderHeatMapLayerByHour(map, cleanData, hour) {
         lat: d.pickup_latitude,
         lon: d.pickup_longitude,
       };
+      console.log(hour);
 
       heatMapArray.push(heatMapPoint);
     }
@@ -139,19 +141,19 @@ let nIntervId;
 function animate() {
   // check if already an interval has been set up
   if (!nIntervId) {
-    nIntervId = setInterval(play, 1000);
+    nIntervId = setInterval(play, 4000);
   }
 }
 
 let i = 0;
 function play() {
-  if (i > 24) {
+  if (i >= 23) {
     i = 0;
   } else {
     i++;
   }
+  renderHeatMapLayerByHour(map, data, i);
 
-  renderHeatMapLayerByHour(map, cleanData, i);
   heurepup.innerHTML = i + "h";
 }
 
@@ -162,6 +164,7 @@ function stop() {
   nIntervId = null;
 
   i = 0;
+  map.removeLayer(heatMap);
 }
 
 function pause() {
@@ -191,12 +194,12 @@ function animate2() {
 
 let y = 0;
 function play2() {
-  if (y > 24) {
+  if (y >= 24) {
     y = 0;
   } else {
     y++;
+    renderHeatMapLayerByHour2(map2, cleanData, y);
   }
-  renderHeatMapLayerByHour2(map2, cleanData, y);
 
   heuredrop.innerHTML = y + "h";
 }
@@ -208,6 +211,8 @@ function stop2() {
   nIntervId2 = null;
 
   y = 0;
+
+  map2.removeLayer(heatMap2);
 }
 
 function pause2() {
