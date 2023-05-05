@@ -1,21 +1,35 @@
 .container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 45%;
+}
+
+.titre {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 
-html, body{
+html, body, p, h{
     background-color: #000000;
     color: #ffffff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
 }
 
-
-h1, h2, h3{
-  color: rgb(248, 236, 7);
+h2{
+  color: #f1f2f1
 }
 
-.axis text,
+h1{
+  color: #ffd300;
+}
+
+h3{
+  color: #ffa100;
+}
+
+/* .axis text,
 .slider text {
   font-size: 18px;
 }
@@ -26,8 +40,66 @@ h1, h2, h3{
 
   .axis text {
     fill: red;
-  }
+  } */
  
   html{
     cursor: url(../src/img/taxi.png), auto;
   }
+
+  #frame1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  h3#paragraphe2{
+    margin-right: 20px;
+    margin-top: 27px;
+  }
+
+h3#paragraphe{
+  margin-left: 20px;
+  margin-top: 27px; 
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+#map2 {
+  height: 400px;
+  width: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+
+button{
+  padding: 10px 24px;
+  background-color: #050801;
+  color: #f1f2f1;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: url(../src/img/taxi.png), auto;
+  width: 100px;
+
+  
+}
+
+button:hover{
+    background: #ffa100;
+    color: #050801;
+}
+
+.button{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;  
+  
+}

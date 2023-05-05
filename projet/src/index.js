@@ -152,7 +152,7 @@ function play() {
   }
 
   renderHeatMapLayerByHour(map, cleanData, i);
-  heurepup.innerHTML = "Heure : " + i + "h";
+  heurepup.innerHTML = i + "h";
 }
 
 function stop() {
@@ -198,7 +198,7 @@ function play2() {
   }
   renderHeatMapLayerByHour2(map2, cleanData, y);
 
-  heuredrop.innerHTML = "Heure : " + y + "h";
+  heuredrop.innerHTML = y + "h";
 }
 
 function stop2() {
