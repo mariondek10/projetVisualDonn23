@@ -141,7 +141,7 @@ let nIntervId;
 function animate() {
   // check if already an interval has been set up
   if (!nIntervId) {
-    nIntervId = setInterval(play, 4000);
+    nIntervId = setInterval(play, 2000);
   }
 }
 
@@ -188,7 +188,7 @@ let nIntervId2;
 function animate2() {
   // check if already an interval has been set up
   if (!nIntervId2) {
-    nIntervId2 = setInterval(play2, 1000);
+    nIntervId2 = setInterval(play2, 2000);
   }
 }
 
@@ -198,7 +198,7 @@ function play2() {
     y = 0;
   } else {
     y++;
-    renderHeatMapLayerByHour2(map2, cleanData, y);
+    renderHeatMapLayerByHour2(map2, data, y);
   }
 
   heuredrop.innerHTML = y + "h";
