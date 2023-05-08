@@ -92,9 +92,8 @@ button{
   padding: 10px 24px;
   background-color: #050801;
   color: #f1f2f1;
-  stroke: #ffd300;
   font-weight: bold;
-  border: none;
+  border-color: #ffd300;
   border-radius: 5px;
   letter-spacing: 1px;
   overflow: hidden;
