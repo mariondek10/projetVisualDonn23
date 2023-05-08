@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Taxis NYC</title>
+    <link rel="icon" type="image/x-icon" href="/assets/taxi-2d5ba021.ico">
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>   
+    <!-- <script src="https://cdn.jsdelivr.net/npm/heatmap.js@2.0.8/build/heatmap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script> -->
+    
+
+	
+  <script type="module" crossorigin src="/assets/index-f726c092.js"></script>
+  <link rel="stylesheet" href="/assets/index-a81255e8.css">
+</head>
+<body>
+	<h1>Trajets de taxis à New York le 14 mai 2013</h1>
+    <img src="/assets/bande-taxi-e980d3ac.svg" alt="">
+    <div id="frame1">
+<div class="container">
+    <div class="titre">
+    <h2>Heatmap des points de pickup</h2>
+    <h3 id="paragraphe"></h3>
+    </div>
+    <div id="map"></div>
+    <div class="button">
+    <button id="play">Play</button>
+    <button id="pause">Pause</button>
+    <button id="stop">Stop</button>
+    </div>
+
+</div>
+
+
+    
+
+   
+    <!--<div id="slider"></div>-->
+    
+<div class="container">
+    <div class="titre">
+    <h2>Heatmap des points de dropoff</h2> 
+    <h3 id="paragraphe2"></h3>
+    </div>
+    <div id="map2"></div>
+    <div class="button">
+    <button id="play2">Play</button>
+    <button id="pause2">Pause</button>
+    <button id="stop2">Stop</button>
+    </div>
+</div>
+
+</div>
+
+<img src="/assets/bande-taxi-e980d3ac.svg" alt="">
+<h1>Observations</h1>
+<div id="frame2">
+    <div class="containerText">
+        <h2> Observations sur les points de pickup</h2>
+            <ul>
+                <li>Les points de pickup sont concentrés dans Manhattan et dans une moindre mesure dans Brooklyn</li>
+                <li>À partir de 7h du matin, la demande augmente drastiquement</li>  
+                <li>Plus on avance dans la journée, plus la zone de pickup s'élargit</li>
+        
+            </ul>
+
+    </div>
+    <div class="containerText">
+        <h2>Observations sur les points de dropoff</h2>
+            <ul>
+                <li>La zone des dropoff est beaucoup plus élargie</li>
+                <li>Les points de chaleur apparaissent plus tard dans la journée et moins fort</li>
+        
+            </ul>
+    </div>
+</div>
+<div id="frame3">
+    <div class="container3">
+        <h2>Observations générales</h2>
+            <ul>
+                <li>Les points les plus chauds sont les mêmes pour les pickup et les dropoff</li>
+                <li>Les deux aéroports ressortent très fort dans les deux cas</li>
+                <li>Manhattan semble être l'endroit ou les gens prennent le plus des taxis</li>
+            </ul>
+    </div>
+
+    <div class="container3">
+        <img src="/assets/taxi-footer-e6de5abe.png" alt="">
+    </div>
+</div>
+
+    
+    
+    
+</body>
+
+
+</html>
