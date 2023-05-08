@@ -9,16 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@rollup/plugin-dsv": "^3.0.2",
-    "vite": "^4.1.4"
+    "vite": "^4.1.4",
+    "vite-plugin-static-copy": "^0.14.0"
   },
   "dependencies": {
     "d3": "^7.8.2",
-    "d3-array": "^3.2.3",
-    "d3-axis": "^3.0.0",
-    "d3-fetch": "^3.0.1",
-    "d3-selection": "^3.0.0",
-    "d3-simple-slider": "^1.10.4",
     "heatmap.js": "^2.0.5",
     "leaflet": "^1.9.3",
     "leaflet.heat": "^0.2.0"

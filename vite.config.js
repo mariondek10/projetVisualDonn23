@@ -1,6 +1,16 @@
 import { defineConfig } from "vite";
-import dsv from "@rollup/plugin-dsv";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default defineConfig({
-  plugins: [dsv()],
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        {
+          // copie fichiers csv
+          src: "data/",
+          dest: "../dist",
+        },
+      ],
+    }),
+  ],
 });
