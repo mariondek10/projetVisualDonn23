@@ -29,18 +29,6 @@ h3{
   color: #ffd300;
 }
 
-/* .axis text,
-.slider text {
-  font-size: 18px;
-}
-
-.slider text {
-    fill: green;
-  }
-
-  .axis text {
-    fill: red;
-  } */
  
   html{
     cursor: url(../src/img/taxi.png), auto;
