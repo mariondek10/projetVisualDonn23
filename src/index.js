@@ -1,19 +1,9 @@
-//import dataTaxi from "../data/trip_data_1.csv";
-
-//console.log(dataTaxi);
-
-//import dataTaxiMai from "../data/trip_data_mai.xlsx";
-
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet";
 import "leaflet.heat";
 import * as d3 from "d3";
-/* import data1505 from "../data/trip_data_20130515.csv"; */
 
 /*Carte*/
-
-//import map from "../src/map.js";
-
 const map = L.map("map").setView([40.764477, -73.979113], 10);
 L.tileLayer(
   "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
@@ -91,7 +81,7 @@ d3.csv("../data/trip_data_20130514.csv").then((data1405) => {
     blur: 13,
     minOpacity: 0.3,
     maxOpacity: 0.9,
-    //gradient: { 0.1: "#A0FF00", 0.5: "#16F2F2", 0.7: "#ff33b1" },
+    gradient: { 0.1: "#A0FF00", 0.5: "#16F2F2", 0.7: "#ff33b1" },
   });
 
   function renderHeatMapLayerByHour2(map2, cleanData, hour) {
@@ -109,8 +99,6 @@ d3.csv("../data/trip_data_20130514.csv").then((data1405) => {
 
     heatMap2.addTo(map2);
   }
-
-  //renderHeatMapLayerByHour2(map2, cleanData, 0);
 
   /*Animation heatmap*/
 
