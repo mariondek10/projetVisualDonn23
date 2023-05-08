@@ -137,9 +137,12 @@ function play() {
   } else {
     i++;
   }
+
+  info.update(i);
+
   renderHeatMapLayerByHour(map, data, i);
 
-  heurepup.innerHTML = i + "h";
+  //heurepup.innerHTML = i + "h";
 }
 
 function stop() {
@@ -165,6 +168,20 @@ document.getElementById("play").addEventListener("click", animate);
 document.getElementById("stop").addEventListener("click", stop);
 document.getElementById("pause").addEventListener("click", pause);
 
+var info = L.control();
+
+info.onAdd = function (map) {
+  this._div = L.DomUtil.create("div", "info");
+  this.update();
+  return this._div;
+};
+
+info.update = function (hour) {
+  this._div.innerHTML = !hour ? "Heure" : hour + "h";
+};
+
+info.addTo(map);
+
 /*Animation heatmap2*/
 
 // variable to store our intervalID
@@ -186,7 +203,9 @@ function play2() {
     renderHeatMapLayerByHour2(map2, data, y);
   }
 
-  heuredrop.innerHTML = y + "h";
+  info2.update(y);
+
+  //heuredrop.innerHTML = y + "h";
 }
 
 function stop2() {
@@ -212,3 +231,17 @@ const heuredrop = document.querySelector("#paragraphe2");
 document.getElementById("play2").addEventListener("click", animate2);
 document.getElementById("stop2").addEventListener("click", stop2);
 document.getElementById("pause2").addEventListener("click", pause2);
+
+var info2 = L.control();
+
+info2.onAdd = function (map) {
+  this._div = L.DomUtil.create("div", "info");
+  this.update();
+  return this._div;
+};
+
+info2.update = function (hour) {
+  this._div.innerHTML = !hour ? "Heure" : hour + "h";
+};
+
+info2.addTo(map2);

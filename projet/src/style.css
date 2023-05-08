@@ -4,6 +4,21 @@
     width: 45%;
 }
 
+.containerText{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-left: 20px;
+}
+
+.container3{
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  align-content: center;
+  margin-left: 20px;
+}
+
 .titre {
   display: flex;
   flex-direction: row;
@@ -31,10 +46,22 @@ h3{
 
  
   html{
-    cursor: url(../src/img/taxi.png), auto;
+    cursor: url(../src/img/taxi2.png), auto;
   }
 
   #frame1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #frame2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #frame3{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -74,6 +101,7 @@ button{
   cursor: url(../src/img/taxi.png), auto;
   width: 100px;
   font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
 
   
 }
@@ -87,7 +115,8 @@ button:hover{
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
-  align-items: center;  
+  align-items: center; 
+  margin-bottom: 20px; 
   
 }
 
@@ -95,3 +124,15 @@ img{
   width: 100%;
   height: 100%;
 }
+
+
+.info {
+    padding: 6px 8px;
+    background: #ffd300;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 14px;
+    color:#050801;
+    border-radius: 5px;
+}
+
