@@ -18,6 +18,8 @@ import data1405 from "../data/trip_data_20130514.csv";
 
 /*Carte*/
 
+//import map from "../src/map.js";
+
 const map = L.map("map").setView([40.764477, -73.979113], 10);
 L.tileLayer(
   "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
@@ -41,6 +43,8 @@ export const cleanData = data1405.map(function (d) {
   };
 });
 let data = cleanData;
+
+//import { data, cleanData } from "../src/data.js";
 
 console.log(cleanData);
 
@@ -141,7 +145,7 @@ let nIntervId;
 function animate() {
   // check if already an interval has been set up
   if (!nIntervId) {
-    nIntervId = setInterval(play, 2000);
+    nIntervId = setInterval(play, 4000);
   }
 }
 
@@ -188,7 +192,7 @@ let nIntervId2;
 function animate2() {
   // check if already an interval has been set up
   if (!nIntervId2) {
-    nIntervId2 = setInterval(play2, 2000);
+    nIntervId2 = setInterval(play2, 4000);
   }
 }
 
