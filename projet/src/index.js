@@ -44,24 +44,7 @@ export const cleanData = data1405.map(function (d) {
 });
 let data = cleanData;
 
-//import { data, cleanData } from "../src/data.js";
-
 console.log(cleanData);
-
-/* Slider */
-
-const divSlider = document.querySelector("#slider");
-const slider = sliderBottom().min(0).max(24).step(1).width(1000);
-
-const g = d3
-  .select(divSlider)
-  .append("svg")
-  .attr("width", 1200)
-  .attr("height", 100)
-  .append("g")
-  .attr("transform", "translate(30,30)");
-
-g.call(slider);
 
 /* Heatmap par heure */
 
@@ -134,8 +117,6 @@ function renderHeatMapLayerByHour2(map2, cleanData, hour) {
 }
 
 //renderHeatMapLayerByHour2(map2, cleanData, 0);
-
-/*Animation slider*/
 
 /*Animation heatmap*/
 

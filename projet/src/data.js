@@ -1,3 +1,5 @@
+import data1405 from "../data/trip_data_20130514";
+
 const cleanData = data1405.map(function (d) {
   return {
     pickup_hour: new Date(d.pickup_datetime).getHours(),
