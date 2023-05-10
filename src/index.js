@@ -81,7 +81,7 @@ d3.csv("../data/trip_data_20130514.csv").then((data1405) => {
     blur: 13,
     minOpacity: 0.3,
     maxOpacity: 0.9,
-    gradient: { 0.1: "#A0FF00", 0.5: "#16F2F2", 0.7: "#ff33b1" },
+    //gradient: { 0.1: "#A0FF00", 0.5: "#16F2F2", 0.7: "#ff33b1" },
   });
 
   function renderHeatMapLayerByHour2(map2, cleanData, hour) {
