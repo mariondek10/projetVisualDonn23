@@ -261,7 +261,7 @@ d3.csv("../data/trip_data_20130514.csv").then((data1405) => {
   ];
 
   const airportIcon = L.icon({
-    iconUrl: "../src/img/avion.png",
+    iconUrl: "./src/img/avion.png",
     iconSize: [20, 25],
   });
 
