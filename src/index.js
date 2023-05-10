@@ -227,4 +227,69 @@ d3.csv("../data/trip_data_20130514.csv").then((data1405) => {
   };
 
   info2.addTo(map2);
+
+  /*Graphique*/
+
+  function getPickupLocationsByHour(data, hour) {
+    // Filter data by pickup hour
+    const filteredData = data.filter(
+      (d) => new Date(d.pickup_datetime).getHours() === hour
+    );
+
+    // Count the number of pickup locations
+    const pickupLocationCount = filteredData.reduce((count, d) => {
+      if (d.pickup_latitude) {
+        count[d.pickup_latitude] = (count[d.pickup_latitude] || 0) + 1;
+      }
+      return count;
+    }, {});
+
+    return pickupLocationCount;
+  }
+
+  const hour = 9;
+  const pickupLocations = getPickupLocationsByHour(data, hour);
+
+  console.log(pickupLocations);
+
+  /*Points des aéroports */
+
+  const airports = [
+    { name: "JFK", lat: 40.6413, lon: -73.7781 },
+    { name: "Newark", lat: 40.6895, lon: -74.1745 },
+    { name: "LaGuardia", lat: 40.7769, lon: -73.874 },
+  ];
+
+  const airportIcon = L.icon({
+    iconUrl: "../src/img/avion.png",
+    iconSize: [30, 30],
+  });
+
+  const pointJFK = L.marker([airports[0].lat, airports[0].lon], {
+    icon: airportIcon,
+  });
+  const pointNewark = L.marker([airports[1].lat, airports[1].lon], {
+    icon: airportIcon,
+  });
+  const pointLaGuardia = L.marker([airports[2].lat, airports[2].lon], {
+    icon: airportIcon,
+  });
+
+  const pointJFK2 = L.marker([airports[0].lat, airports[0].lon], {
+    icon: airportIcon,
+  });
+  const pointNewark2 = L.marker([airports[1].lat, airports[1].lon], {
+    icon: airportIcon,
+  });
+  const pointLaGuardia2 = L.marker([airports[2].lat, airports[2].lon], {
+    icon: airportIcon,
+  });
+
+  pointJFK.bindPopup("<h3>Aéroport JFK</h3>").addTo(map);
+  pointNewark.bindPopup("<h3>Aéroport de Newark</h3>").addTo(map);
+  pointLaGuardia.bindPopup("<h3>Aéroport La Guardia</h3>").addTo(map);
+
+  pointJFK2.bindPopup("<h3>Aéroport JFK</h3>").addTo(map2);
+  pointNewark2.bindPopup("<h3>Aéroport de Newark</h3>").addTo(map2);
+  pointLaGuardia2.bindPopup("<h3>Aéroport La Guardia</h3>").addTo(map2);
 });
