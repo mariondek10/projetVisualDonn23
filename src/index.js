@@ -262,7 +262,7 @@ d3.csv("../data/trip_data_20130514.csv").then((data1405) => {
 
   const airportIcon = L.icon({
     iconUrl: "../src/img/avion.png",
-    iconSize: [30, 30],
+    iconSize: [20, 25],
   });
 
   const pointJFK = L.marker([airports[0].lat, airports[0].lon], {
