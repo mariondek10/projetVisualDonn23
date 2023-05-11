@@ -13,7 +13,7 @@ export default defineConfig({
         {
           // copie fichiers csv
           src: "src/img/",
-          dest: "../dist",
+          dest: "../dist/src",
         },
       ],
     }),
