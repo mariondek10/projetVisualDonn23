@@ -10,6 +10,11 @@ export default defineConfig({
           src: "data/",
           dest: "../dist",
         },
+        {
+          // copie fichiers csv
+          src: "src/img/",
+          dest: "../dist",
+        },
       ],
     }),
   ],
